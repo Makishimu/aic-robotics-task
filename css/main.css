@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+main{
+    width: 1329px;
+    height: 917px;
+    margin: 0 auto;
+    background-image: url('../img/layer.png');
+    position: relative;
+}
+.title-text{
+    width: 640px;
+    height: 160px;
+    margin-top:35px;
+    padding-top: 20px;
+    padding-left: 30px;
+    background-color: #f8f8f8;
+}
+.title-text .title{
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 19px;
+    color: #eb4f47;
+}
+.title-text .main-text{
+    display: block;
+    font-size: 15px;
+    color: #444444;
+}
+.about-text{
+    width: 980px;
+    height: 210px;
+    background-color: #f06f2f;
+    padding-top: 25px;
+    padding-left: 30px;
+    position: absolute;
+    bottom: 70px;
+    left: 175px;
+}
+.about-text .title{
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    color: #444444;
+    padding-bottom: 29px;
+}
+.about-text .date{
+    display: block;
+    font-weight: bold;
+    color: #49a2c7;
+    padding-bottom: 15px;
+}
+.about-text .main-text{
+    display: block;
+    font-size: 15px;
+    color: #444444;
+}
+/* ship styles*/
+#ship{
+    width: 63px;
+    height: 40px;
+    background-image: url('../img/ship.png');
+    position: absolute;
+    left: 185px;
+    bottom: 420px;
+    transform: rotate(-20deg);
+}
+/* circle and year styles */
+.circle {
+    width: 24px;
+    height: 24px;
+    background-color: #49a2c7;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+}
+.circle-1{
+    bottom: 400px;
+    left: 185px;
+}
+.circle-2{
+    bottom: 400px;
+    left: 395px;
+}
+.circle-3{
+    bottom: 450px;
+    left: 535px;
+}
+.circle-4{
+    bottom: 538px;
+    left: 675px;
+}
+.circle-5{
+    bottom: 520px;
+    left: 810px;
+}
+.circle-6{
+    bottom: 500px;
+    left: 910px;
+}
+.circle-7{
+    bottom: 575px;
+    left: 1025px;
+}
+.circle-8{
+    bottom: 655px;
+    left: 1135px;
+}
+.year{
+    width: 67px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+}
+.year-1{
+    bottom: 359px;
+    left: 165px;
+    background-color: #ee4e41;
+}
+.year-2{
+    bottom: 357px;
+    left: 375px;
+}
+.year-3{
+    bottom: 400px;
+    left: 515px;
+}
+.year-4{
+    bottom: 488px;
+    left: 655px;
+}
+.year-5{
+    bottom: 485px;
+    left: 790px;
+}
+.year-6{
+    bottom: 460px;
+    left: 890px;
+}
+.year-7{
+    bottom: 535px;
+    left: 1020px;
+}
+.year-8{
+    bottom: 615px;
+    left: 1115px;
+}
