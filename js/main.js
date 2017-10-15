@@ -1,5 +1,19 @@
 $(document).ready(function(){
 
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyClvEHy6PkuQbXgtltYAjRoxYPokDCqdxk",
+        authDomain: "ship-24bb7.firebaseapp.com",
+        databaseURL: "https://ship-24bb7.firebaseio.com",
+        projectId: "ship-24bb7",
+        storageBucket: "",
+        messagingSenderId: "878599092289"
+    };
+    firebase.initializeApp(config);
+
+    //Firebase for hosting only!
+
+    // On click functions
     $('.circle-1').add('.year-1').on('click', function () {
         insertText(text1, '.year-1', title1, date1);
         moveToPoint(startPoint, points[0]);
@@ -33,6 +47,7 @@ $(document).ready(function(){
         moveToPoint(startPoint, points[14]);
     });
 
+    // Points array
     var points = [
             {
                 'id': 1,
@@ -141,8 +156,10 @@ $(document).ready(function(){
             }
         ],
 
+        // Set start point as firts one from points array
         startPoint = points[0],
 
+        // Texts for points
         text1 = 'Теперь пользователям интернет- и мобильного банка доступен новый продукт' +
             ' – «Вклад-копилка». Это специальный вариант оформления депозита, созданный на' +
             ' базе вклада «Накопительный». Он открывается только с помощью дистанционных' +
@@ -179,6 +196,7 @@ $(document).ready(function(){
             'сотрудничестве, которое предусматривает тесное взаимодействие сторон в целях повышения' +
             ' доступности, качества банковских услуг и увеличения доли безналичных' +
             ' платежей в экономике Республики.',
+        // Titles for points
         title1 = 'Новые горизонты',
         title2 = 'Расширение возможностей',
         title3 = 'Филиалы в регионах страны',
@@ -196,6 +214,7 @@ $(document).ready(function(){
         date7 = '19 сентября 1990 г.',
         date8 = '29 декабря 2013 г.';
 
+    // Insert text function
     function insertText(text, selector, title, date){
         $('.year').css('background-color','transparent');
         $(selector).css('background-color','#f1844f');
@@ -212,6 +231,7 @@ $(document).ready(function(){
         },6);
     }
 
+    // Function which create ship route
     function shipRoute(from, to){
         var startId = parseInt(from.id),
             finishId = parseInt(to.id),
@@ -227,14 +247,18 @@ $(document).ready(function(){
         return newArray;
     }
 
-    function moveToPoint(from, to){ // Кораблик проходит разные отрезки за одно время.
-                                    // В зависимости от количества итераций, время НЕ меняется.
-                                   // Как от 2002 до 2006, так и от 2002 до 1990, время будет одинаковое.
+    // Function which move ship to points, step by step
+    function moveToPoint(from, to){ // The ship passes different segments at one time.
+                                    // Depending on the number of iterations, the time does NOT change.
+                                   // Both from 2002 to 2006, and from 2002 to 1990, the time will be the same.
+        // Root is array of control points
         var routeArray = shipRoute(from, to),
+        // Animation loop duration
         duration = 2700/ (routeArray.length -1);
 
-        for(var i = 1; i < routeArray.length; i++){ // i = 1, потому что первый (array[0]) элемент массива - это начальная точка.
-            $("#ship").animate(                     // Нам не надо анимировать стояние на месте.
+        // Animation loop
+        for(var i = 1; i < routeArray.length; i++){ // i = 1, because the first (array [0]) element of the array is the starting point.
+            $("#ship").animate(                     // We do not need to animate the standing on the ground.
                 {
                     'left': routeArray[i].x,
                     'bottom' : routeArray[i].y,
@@ -254,30 +278,33 @@ $(document).ready(function(){
         }
         startPoint = to;
     }
-    // function moveToPoint(from, to){ // Кораблик проходит каждый из отрезков за одиаковое время время.
-    //                                 // В зависимости от количества итераций, меняется время.
-    //                                 // От 2002 до 2006 или от 2002 до 1990, время будет разное.
-    //     var routeArray = shipRoute(from, to);
-    //
-    //     for(var i = 1; i < routeArray.length; i++){ //  i = 1, потому что первый (array[0]) элемент массива - это начальная точка.
-    //         $("#ship").animate(                     //  Нам не надо анимировать стояние на месте.
-    //             {
-    //                 'left': routeArray[i].x,
-    //                 'bottom' : routeArray[i].y,
-    //                 ' borderSpacing': routeArray[i].deg
-    //             },
-    //             {
-    //                 step: function(now,fx) {
-    //                     $(this).css('-webkit-transform','rotate('+now+'deg)');
-    //                     $(this).css('-moz-transform','rotate('+now+'deg)');
-    //                     $(this).css('transform','rotate('+now+'deg)');
-    //                 },
-    //                 easing: 'linear',
-    //                 duration: 1000
-    //             },
-    //             800
-    //         );
-    //     }
-    //     startPoint = to;
-    // }
+    /* function moveToPoint(from, to){ // The ship passes each of the segments for the same time.
+                                     // Depending on the number of iterations, the time changes.
+                                     // From 2002 to 2006 or from 2002 to 1990, the time will be different.
+         var routeArray = shipRoute(from, to),
+            duration = 1000;
+
+    
+    
+         for(var i = 1; i < routeArray.length; i++){ //  i = 1, because the first (array [0]) element of the array is the starting point.
+             $("#ship").animate(                     // We do not need to animate the standing on the ground.
+                 {
+                     'left': routeArray[i].x,
+                     'bottom' : routeArray[i].y,
+                     ' borderSpacing': routeArray[i].deg
+                 },
+                 {
+                     step: function(now,fx) {
+                         $(this).css('-webkit-transform','rotate('+now+'deg)');
+                         $(this).css('-moz-transform','rotate('+now+'deg)');
+                         $(this).css('transform','rotate('+now+'deg)');
+                     },
+                     easing: 'linear',
+                     duration: duration
+                 },
+                 800
+             );
+         }
+         startPoint = to;
+     } */
 });
