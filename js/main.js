@@ -1,16 +1,5 @@
 $(document).ready(function(){
 
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyClvEHy6PkuQbXgtltYAjRoxYPokDCqdxk",
-        authDomain: "ship-24bb7.firebaseapp.com",
-        databaseURL: "https://ship-24bb7.firebaseio.com",
-        projectId: "ship-24bb7",
-        storageBucket: "",
-        messagingSenderId: "878599092289"
-    };
-    firebase.initializeApp(config);
-
     //Firebase for hosting only!
 
     // On click functions

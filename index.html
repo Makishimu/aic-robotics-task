@@ -8,14 +8,25 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/main.css" >
 
-        <script
-                src="http://code.jquery.com/jquery-2.2.4.min.js"
-                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-                crossorigin="anonymous"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <script src="js/main.js"></script>
     </head>
     <body>
+        <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyClvEHy6PkuQbXgtltYAjRoxYPokDCqdxk",
+            authDomain: "ship-24bb7.firebaseapp.com",
+            databaseURL: "https://ship-24bb7.firebaseio.com",
+            projectId: "ship-24bb7",
+            storageBucket: "ship-24bb7.appspot.com",
+            messagingSenderId: "878599092289"
+          };
+          firebase.initializeApp(config);
+        </script>
+
         <main>
             <div class="title-text">
                 <span class="title">
