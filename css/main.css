@@ -35,7 +35,7 @@ main{
 .about-text{
     width: 980px;
     height: 210px;
-    background-color: #f06f2f;
+    background-color: #f1844f;
     padding-top: 25px;
     padding-left: 30px;
     position: absolute;
@@ -126,7 +126,7 @@ main{
 .year-1{
     bottom: 359px;
     left: 165px;
-    background-color: #ee4e41;
+    background-color: #f1844f;
 }
 .year-2{
     bottom: 357px;

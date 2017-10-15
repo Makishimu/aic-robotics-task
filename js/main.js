@@ -198,7 +198,7 @@ $(document).ready(function(){
 
     function insertText(text, selector, title, date){
         $('.year').css('background-color','transparent');
-        $(selector).css('background-color','#ee4e41');
+        $(selector).css('background-color','#f1844f');
         $('.about-text .title').text(title);
         $('.about-text .date').text(date);
         $('.about-text .main-text').text('');
